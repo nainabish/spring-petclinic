@@ -18,14 +18,14 @@ pipeline {
 	}
 	post {
 	  always {
-		junit 'target/spring-petclinic-reports/*.xml
+		junit 'target/spring-petclinic-reports/*.xml'
 		}
 	}
     }
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t nainabish/spring-petclinic:latest .'
+        sh 'docker build -t nainabish/spring-petclinic:latest'
       }
     }
   }
