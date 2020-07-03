@@ -12,6 +12,15 @@ pipeline {
       steps {
         sh 'mvn clean install'
       }
+   stage('Test'){
+      	Steps{
+	  sh 'mvn test'
+	}
+	post {
+	  always {
+		junit 'target/spring-petclinic-reports/*.xml
+		}
+	}
     }
     stage('Docker Build') {
       agent any
